@@ -1,0 +1,52 @@
+form#fileupload(action='', method='POST', enctype='multipart/form-data')
+  .row.fileupload-buttonbar
+    .span7
+      span.btn.btn-success.fileinput-button
+        i.icon-plus.icon-white
+        span Add files...
+        input(type='file', name='files[]', multiple='multiple')
+      | &nbsp;
+      button.btn.btn-primary.start(type='submit')
+        i.icon-upload.icon-white
+        span Start upload
+      | &nbsp;
+      button.btn.btn-warning.cancel(type='reset')
+        i.icon-ban-circle.icon-white
+        span Cancel upload
+      | &nbsp;
+      button.btn.btn-danger.delete(type='button')
+        i.icon-trash.icon-white
+        span Delete
+      | &nbsp;
+      input.toggle(type='checkbox')
+      | &nbsp;
+      span.fileupload-loading
+    .span5.fileupload-progress.fade
+      .progress.progress-success.progress-striped.active(role='progressbar', aria-valuemin='0', aria-valuemax='100')
+        .bar(style='width: 0%;')
+      .progress-extended  
+  table.table.table-striped(role='presentation')
+    tbody.files(data-toggle='modal-gallery', data-target='#modal-gallery')
+
+.well.well-small
+  h4 Notes
+  ul
+    if maxFileSize
+      li
+        | The maximum file size for uploads in this page is &nbsp;
+        strong=$.blueimp.fileupload.prototype._formatFileSize(maxFileSize)
+        | .
+    if acceptFileTypes
+      li
+        | Only type (&nbsp;
+        strong=acceptFileTypes 
+        | &nbsp;) are allowed in this page.
+    if maxNumberOfFiles
+      li
+        | Only&nbsp;
+        strong=maxNumberOfFiles 
+        | &nbsp;file(s) are allowed in this page.   
+    li
+      | You can&nbsp;
+      strong drag & drop
+      | &nbsp;files from your desktop on this webpage with Google Chrome, Mozilla Firefox and Apple Safari.

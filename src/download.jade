@@ -1,0 +1,27 @@
+each file, i in o.files
+  tr.template-download.fade
+    td
+      span.preview
+        if file.thumbnail_url
+          a(href=file.url, title=file.name, data-gallery='gallery', download=file.name)
+            img(src=file.thumbnail_url)
+    td
+      p.name
+        a(href=file.url, title=file.name, data-gallery= "#{file.thumbnail_url && 'gallery'}", download=file.name)=file.name
+      if file.error
+        div
+          span.label.label-important Error
+          | #{file.error}
+
+    td
+      span.size=o.formatFileSize(file.size)
+    td
+      if file.delete_type && file.delete_url
+        button.btn.btn-danger.delete(data-type=file.delete_type, data-url=file.delete_url, if='if') 
+          // data-xhr-fields='{"withCredentials":true}'
+          i.icon-trash.icon-white
+          span Delete
+        | &nbsp;
+        input.toggle(type='checkbox', name='delete', value='1')
+    td.after-upload
+      button.btn.btn-success.abc(data-insert-image=file.url) 插入圖片

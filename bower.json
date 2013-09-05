@@ -1,0 +1,16 @@
+{
+  "name": "backbone.fileupload_view",
+  "version": "0.0.1",
+  "main": "dist/backbone.fileupload_view.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.0.0",
+    "blueimp-file-upload": "~8.8.5"
+  }
+}
