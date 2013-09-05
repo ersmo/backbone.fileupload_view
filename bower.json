@@ -1,5 +1,5 @@
 {
-  "name": "backbone.fileupload_view",
+  "name": "backbone.fileuploadview",
   "version": "0.0.1",
   "main": "dist/backbone.fileupload_view.js",
   "ignore": [

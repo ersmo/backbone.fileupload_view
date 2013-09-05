@@ -5,14 +5,14 @@
   "author": {
     "name": "Fanlia",
     "email": "fanlia@outlook.com",
-    "url": "https://github.com/Fanlia"
+    "url": "https://github.com/uxnow"
   },
   "main": "dist/backbone.fileupload_view.js",
-  "homepage": "https://github.com/Fanlia/backbone.fileupload_view",
-  "bugs": "https://github.com/Fanlia/backbone.fileupload_view/issues",
+  "homepage": "https://github.com/ersmo/backbone.fileupload_view",
+  "bugs": "https://github.com/ersmo/backbone.fileupload_view/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Fanlia/backbone.fileupload_view.git"
+    "url": "git://github.com/ersmo/backbone.fileupload_view.git"
   },
   "engines": {
     "node": ">=0.8.0",
