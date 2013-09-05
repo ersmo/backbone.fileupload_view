@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-( not ready yet, please wait for new version, cause brunch with bower seems not to be abel concate files in order by files in main property, that will be fixed in bruncch 1.7.2)
+( not ready yet, please wait for new version, cause brunch with bower seems not to be able to concate files in order by files in main property, that will be fixed in bruncch 1.7.2)
 
 ## Documentation
 _(Coming soon)_
