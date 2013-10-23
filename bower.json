@@ -1,7 +1,7 @@
 {
-  "name": "backbone.fileuploadview",
+  "name": "backbone.fileupload_view",
   "version": "0.0.1",
-  "main": "dist/backbone.fileupload_view.js",
+  "main": ["dist/backbone.fileupload_view.js", "dist/backbone.fileupload_view.css"],
   "ignore": [
     "**/.*",
     "node_modules",
@@ -11,6 +11,6 @@
   ],
   "dependencies": {
     "backbone": "~1.0.0",
-    "blueimp-file-upload": "~8.8.5"
+    "blueimp-file-upload": "latest"
   }
 }
