@@ -14,20 +14,23 @@ class Backbone.FileUploadView extends Backbone.View
     acceptFileTypes: null
     maxNumberOfFiles: null
     done: null
+    template: null
+    uploadTemplate: null
+    downloadTemplate: null
 
   initialize: ->
     @options = _.defaults @options, @defaults
     @render()
 
   render: =>
-    @$el.html @template @options
+    @$el.html (@options.template or @template) @options
     fp = @$('#fileupload').fileupload
       url: @options.url
       maxFileSize: @options.maxFileSize
       acceptFileTypes: @options.acceptFileTypes
       maxNumberOfFiles: @options.maxNumberOfFiles
-      uploadTemplate: (o) => @upload o: o
-      downloadTemplate: (o) => @download o: o
+      uploadTemplate: (o) => (@options.uploadTemplate or @upload) o: o
+      downloadTemplate: (o) => (@options.downloadTemplate or @download) o: o
  
     fp.on 'fileupload' + k, v for k, v of @options when k in @upload_events
     

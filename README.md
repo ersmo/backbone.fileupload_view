@@ -30,7 +30,22 @@ Please add the code below to under the key overrides of bower.json
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+````
+    new Backbone.FileUploadView
+      el: @$('.testContainer5')
+      url: 'http://localhost:8888'
+      # acceptFileTypes: /sav/i
+      # maxNumberOfFiles: 1
+      # 
+      done: (e, data) ->
+        console.log e, data
+        true
+      submit: (e, data) ->
+        data.formData = {name: 'pic.jpg'}
+        true
+
+    # 具体请查看 FileUploadView 源文件
+````
 
 ## License
 

@@ -167,7 +167,10 @@ buf.push("</td><td class=\"before-upload\"></td></tr>");
       maxFileSize: null,
       acceptFileTypes: null,
       maxNumberOfFiles: null,
-      done: null
+      done: null,
+      template: null,
+      uploadTemplate: null,
+      downloadTemplate: null
     };
 
     FileUploadView.prototype.initialize = function() {
@@ -178,19 +181,19 @@ buf.push("</td><td class=\"before-upload\"></td></tr>");
     FileUploadView.prototype.render = function() {
       var fp, k, v, _ref1,
         _this = this;
-      this.$el.html(this.template(this.options));
+      this.$el.html((this.options.template || this.template)(this.options));
       fp = this.$('#fileupload').fileupload({
         url: this.options.url,
         maxFileSize: this.options.maxFileSize,
         acceptFileTypes: this.options.acceptFileTypes,
         maxNumberOfFiles: this.options.maxNumberOfFiles,
         uploadTemplate: function(o) {
-          return _this.upload({
+          return (_this.options.uploadTemplate || _this.upload)({
             o: o
           });
         },
         downloadTemplate: function(o) {
-          return _this.download({
+          return (_this.options.downloadTemplate || _this.download)({
             o: o
           });
         }

@@ -38,10 +38,17 @@ module.exports = (grunt) ->
           'lib/download.js': 'src/download.jade'
           'lib/upload.js': 'src/upload.jade'
 
+    copy:
+      css:
+        src: 'style/*'
+        dest: 'dist/'
+        flatten: true
+        expand: true
+
     watch:
       scripts:
         files: ['src/*.coffee', 'src/*.jade', 'Gruntfile.coffee']
-        tasks: ['coffee', 'jade', 'concat', 'uglify']
+        tasks: ['clean', 'copy', 'coffee', 'jade', 'concat', 'uglify']
 
     clean: [
       'lib'
@@ -54,9 +61,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-jade'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
 
   grunt.registerTask 'build', [
     'clean'
+    'copy'
     'coffee'
     'jade'
     'concat'
